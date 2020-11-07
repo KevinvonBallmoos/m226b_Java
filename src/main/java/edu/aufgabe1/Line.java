@@ -3,6 +3,9 @@ package edu.aufgabe1;
 import lombok.Getter;
 import lombok.ToString;
 
+import javax.swing.*;
+import java.awt.*;
+
 @Getter
 @ToString
 public class Line extends Figure {
@@ -23,8 +26,12 @@ public class Line extends Figure {
      * Zeichnet eine Figur auf dem Display.
      */
     @Override
-    public void draw() {
-        System.out.println(this);
+    public void draw(Graphics g) {
+
+        g.drawLine(this.getPosition().getX(),
+                this.getPosition().getY(),
+                this.getEnd().getX(),
+                this.getEnd().getY());
     }
 }
 

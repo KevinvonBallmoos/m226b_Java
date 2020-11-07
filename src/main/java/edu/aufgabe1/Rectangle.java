@@ -3,6 +3,9 @@ package edu.aufgabe1;
 import lombok.Getter;
 import lombok.ToString;
 
+import javax.swing.*;
+import java.awt.*;
+
 @Getter
 @ToString
 public class Rectangle extends Figure {
@@ -31,9 +34,13 @@ public class Rectangle extends Figure {
      * Zeichnet eine Figur auf dem Display.
      */
     @Override
-    public void draw() {
-        System.out.println(this);
+    public void draw(Graphics g) {
+        g.drawRect(
+                this.getPosition().getX(),
+                this.getPosition().getY(),
+                this.getWidth(), this.getHeight());
     }
+
 }
 
 

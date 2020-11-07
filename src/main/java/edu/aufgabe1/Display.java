@@ -2,8 +2,7 @@ package edu.aufgabe1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Die Klasse Display stellt ein Fenster auf dem Bildschirm zur Verfügung, in welchem
@@ -13,11 +12,6 @@ import java.util.List;
  * @author Andres Scheidegger
  */
 public class Display extends JFrame {
-
-    /**
-     * Die Liste der dargestellten Figur-Objekte
-     */
-    private final List<Figure> figures = new ArrayList<>();
 
     /**
      * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
@@ -57,50 +51,8 @@ public class Display extends JFrame {
      * @param g Referenz auf das Graphics-Objekt zum zeichnen.
      */
     private void draw(Graphics g) {
-        for (Figure figure : figures) {
-            if (figure instanceof Rectangle) {
-                Rectangle rectangle = (Rectangle) figure;
-                g.drawRect(
-                        rectangle.getPosition().getX(),
-                        rectangle.getPosition().getY(),
-                        rectangle.getWidth(), rectangle.getHeight());
 
-            }
-            if (figure instanceof Circle) {
-                Circle circle = (Circle) figure;
-                int radius = circle.getRadius();
-                int diameter = radius * 2;
-                g.drawOval(
-                        circle.getPosition().getX() - radius,
-                        circle.getPosition().getY() - radius,
-                        diameter, diameter);
-
-            }
-            if (figure instanceof Line) {
-                Line line = (Line) figure;
-                g.drawLine(line.getPosition().getX(), line.getPosition().getY(),
-                        line.getEnd().getX(), line.getEnd().getY());
-            }
-        }
     }
 
-    /**
-     * Fügt eine weitere Figur hinzu und löst die Auffrischung des Fensterinhaltes aus.
-     *
-     * @param figur Referenz auf das weitere Figur-Objekt.
-     */
-    public void add(Figure figur) {
-        figures.add(figur);
-        repaint();
-    }
-
-    /**
-     * Löscht alle Figuren und löst die Auffrischung des Fensterinhaltes aus.
-     */
-    @SuppressWarnings("unused")
-    public void clear() {
-        figures.clear();
-        repaint();
-    }
 
 }

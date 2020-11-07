@@ -2,8 +2,10 @@ package edu.aufgabe1;
 
 import lombok.Data;
 
+import java.awt.*;
+
 @Data
-public abstract class Figure {
+public abstract class Figure extends Component{
     /**
      * Position der Figur(en) auf dem Display
      */
@@ -16,6 +18,8 @@ public abstract class Figure {
     /**
      * Zeichnet eine Figur auf dem Display.
      */
-    public abstract void draw();
+    public abstract void draw(Graphics g);
+
+
 }
 
