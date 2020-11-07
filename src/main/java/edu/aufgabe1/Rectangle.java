@@ -41,6 +41,12 @@ public class Rectangle extends Figure {
                 this.getWidth(), this.getHeight());
     }
 
+    @Override
+    public void moveTo(Position position) {
+        
+
+
+    }
 }
 
 

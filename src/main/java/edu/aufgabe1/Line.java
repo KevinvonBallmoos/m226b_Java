@@ -27,11 +27,18 @@ public class Line extends Figure {
      */
     @Override
     public void draw(Graphics g) {
-
         g.drawLine(this.getPosition().getX(),
                 this.getPosition().getY(),
                 this.getEnd().getX(),
                 this.getEnd().getY());
+    }
+    @Override
+    public void moveTo(Position position) {
+        super.moveTo(position);
+        end.setX(position.getX() + end.getX());
+        end.setY(position.getY() + end.getY());
+
+
     }
 }
 

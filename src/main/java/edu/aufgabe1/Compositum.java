@@ -1,7 +1,7 @@
 package edu.aufgabe1;
 
-import edu.aufgabe1.java.awt.Component;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,17 +12,21 @@ public class Compositum extends Component {
      */
     private final List<Component> components = new ArrayList<>();
 
-    public Compositum(){
+    public Compositum() {
         super();
     }
 
-    public void addComponent(Component component){
+    public void addComponent(Component component) {
         components.add(component);
     }
-    public void moveTo(Position position){
 
+    public void moveTo(Position position) {
+        for (Component component : components) {
+
+        }
     }
-    public void display(){
+
+    public void display() {
 
     }
 

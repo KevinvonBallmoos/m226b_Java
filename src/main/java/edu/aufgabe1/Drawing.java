@@ -23,8 +23,7 @@ public class Drawing {
         for (int i = 0; i< 100; i++){
             Thread.sleep(50);
             drawing.moveTo(new Position(1,1));
-            drawing.display();
-
+            drawing.repaint();
         }
     }
 }
