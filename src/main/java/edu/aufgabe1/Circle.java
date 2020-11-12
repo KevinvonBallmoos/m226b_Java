@@ -37,6 +37,13 @@ public class Circle extends Figure {
     /**
      * Zeichnet eine Figur auf dem Display.
      */
+
+    @Override
+    public void moveTo(Position position){
+
+
+    }
+
     @Override
     public void draw(Graphics g) {
 

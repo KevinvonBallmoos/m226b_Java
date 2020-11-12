@@ -15,14 +15,20 @@ public class Rectangle extends Figure {
     private final int height, width;
 
     /**
-     * Erstellen eines neuen Rechteckes.      *      * @param height Länge des Rechteckes      * @param width Breite des Rechteckes
+     * Erstellen eines neuen Rechteckes.
+     * @param height Länge des Rechteckes
+     * @param width Breite des Rechteckes
      */
     public Rectangle(int height, int width) {
         this(new Position(), height, width);
     }
 
     /**
-     * Erstellen eines neuen Rechteckes. Die Position [x,y] entspricht      * der oberen, linken Ecke des Rechteckes.      *      * @param position Position des Rechteckes auf dem Display      * @param height Länge des Rechteckes      * @param width Breite des Rechteckes
+     * Erstellen eines neuen Rechteckes. Die Position [x,y] entspricht
+     * der oberen, linken Ecke des Rechteckes.
+     * @param position Position des Rechteckes auf dem Display
+     * @param height Länge des Rechteckes
+     * @param width Breite des Rechteckes
      */
     public Rectangle(Position position, int height, int width) {
         super(position);
@@ -33,6 +39,14 @@ public class Rectangle extends Figure {
     /**
      * Zeichnet eine Figur auf dem Display.
      */
+
+    @Override
+    public void moveTo(Position position) {
+
+
+
+    }
+
     @Override
     public void draw(Graphics g) {
         g.drawRect(
@@ -41,12 +55,6 @@ public class Rectangle extends Figure {
                 this.getWidth(), this.getHeight());
     }
 
-    @Override
-    public void moveTo(Position position) {
-        
-
-
-    }
 }
 
 

@@ -24,4 +24,8 @@ public class Position {
         y = 0;
     }
 
+    public void add(Position position){
+
+    }
+
 }

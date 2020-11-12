@@ -17,7 +17,7 @@ public class Display extends JFrame {
      * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
      * JFrame-Objekt, auf welchem die Figuren gezeichnet werden.
      */
-    public Display() {
+    public Display(Compositum compositum) {
         Dimension windowSize = new Dimension(600, 600);
         setSize(windowSize);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
