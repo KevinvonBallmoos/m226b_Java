@@ -20,10 +20,13 @@ public class Drawing {
         compositum.add(circle);
         compositum.add(line);
 
+
+        display.display();
+
         for (int i = 0; i < 100; i++){
             Thread.sleep(50);
             compositum.moveTo(new Position(1,1));
-            compositum.display();
+            display.display();
         }
     }
 }

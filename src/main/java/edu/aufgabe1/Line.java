@@ -12,13 +12,14 @@ public class Line extends Figure {
     /**
      * Endposition der Linie auf dem Display.
      */
-    private final Position end;
+    private Position end;
 
     /**
      * Erstellen einer neuen Linie. Die Position [x,y] entspricht der
      * Startposition der Linie auf dem Display.
+     *
      * @param start Startposition der Linie auf dem Display
-     * @param end Endposition der Linie auf dem Display
+     * @param end   Endposition der Linie auf dem Display
      */
     public Line(Position start, Position end) {
         super(start);
@@ -31,11 +32,10 @@ public class Line extends Figure {
 
     @Override
     public void moveTo(Position position) {
-        super.moveTo(position);
-        end.setX(position.getX() + end.getX());
-        end.setY(position.getY() + end.getY());
-
+        this.getLocation().x += getPosition().getX();
+        this.getLocation().y += getPosition().getX();
     }
+
     @Override
     public void draw(Graphics g) {
         g.drawLine(this.getPosition().getX(),

@@ -29,14 +29,14 @@ public class Display extends JFrame {
         createAndAddDrawingPanel();
         setResizable(false);
         setVisible(true);
+
     }
 
     private void createAndAddDrawingPanel() {
         // Das JPanel-Objekt ist ein Objekt einer anonymen Unterklasse von JPanel
-        // Siehe Java-Grundkurs Abschnitt 3.9
         add(new JPanel() {
             // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-
-            // Methode beim Dsiplay aufruft.
+            // Methode beim Display aufruft.
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -51,7 +51,25 @@ public class Display extends JFrame {
      * @param g Referenz auf das Graphics-Objekt zum zeichnen.
      */
     private void draw(Graphics g) {
+        for (Component component: getComponents()){
+            if (component instanceof Rectangle){
+                Rectangle rectangle = (Rectangle) component;
+                rectangle.draw(g);
+            }
+            if (component instanceof Circle){
+                Circle circle = (Circle) component;
+                circle.draw(g);
+            }
+            if (component instanceof Line){
+                Line line = (Line) component;
+                line.draw(g);
+            }
 
+        }
+
+    }
+    public void display(){
+        repaint();
     }
 
 

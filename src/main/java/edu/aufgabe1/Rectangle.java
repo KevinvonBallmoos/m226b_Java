@@ -42,9 +42,8 @@ public class Rectangle extends Figure {
 
     @Override
     public void moveTo(Position position) {
-
-
-
+        this.getLocation().x += getPosition().getX();
+        this.getLocation().y += getPosition().getY();
     }
 
     @Override

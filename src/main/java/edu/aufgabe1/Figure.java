@@ -20,6 +20,10 @@ public abstract class Figure extends Component{
      */
     public abstract void draw(Graphics g);
 
+    public void moveTo(Position position){
+
+    }
+
 
 }
 

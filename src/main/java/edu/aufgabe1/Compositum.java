@@ -1,6 +1,5 @@
 package edu.aufgabe1;
 
-import java.awt.Container;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +13,7 @@ public class Compositum extends Component {
 
     public Compositum() {
         super();
+
     }
 
     public void add(Component component) {
@@ -22,15 +22,11 @@ public class Compositum extends Component {
 
     public void moveTo(Position position){
         for (Component component : components) {
-            component.getLocation().x += position.getX();
-            component.getLocation().y += position.getY();
+            position.add(position);
             moveTo(position);
         }
     }
 
-    public void display() {
-
-    }
 
     /**
      * Löscht alle Figuren und löst die Auffrischung des Fensterinhaltes aus.
@@ -38,6 +34,7 @@ public class Compositum extends Component {
     @SuppressWarnings("unused")
     public void clear() {
         components.clear();
+
     }
 
 }

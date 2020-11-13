@@ -12,7 +12,7 @@ public class Circle extends Figure {
     /**
      * Radius des Kreises.
      */
-    private final int radius;
+    private int radius;
 
     /**
      * Erstellen eines neuen Kreises.
@@ -40,14 +40,13 @@ public class Circle extends Figure {
 
     @Override
     public void moveTo(Position position){
-
-
+        this.getLocation().x += getPosition().getX();
+        this.getLocation().y += getPosition().getY();
     }
 
     @Override
     public void draw(Graphics g) {
-
-        int radius = this.getRadius();
+        this.radius = this.getRadius();
         int diameter = radius * 2;
         g.drawOval(
                 this.getPosition().getX() - radius,

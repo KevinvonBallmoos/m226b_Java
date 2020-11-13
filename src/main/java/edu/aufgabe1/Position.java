@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Position {
-    private final int x, y;
+    private int x, y;
 
     /**
      * Erstellen eines neuen Positionsobjektes.      *      * @param x Koordinate auf dem Display      * @param y Koordinate auf dem Display
@@ -25,7 +25,8 @@ public class Position {
     }
 
     public void add(Position position){
-
+        this.x += position.getX();
+        this.y += position.getY();
     }
 
 }
