@@ -1,13 +1,15 @@
-package edu.aufgabe1;
+package edu.Grafikeditor;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
 import javax.swing.*;
 import java.awt.*;
 
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Line extends Figure {
     /**
      * Endposition der Linie auf dem Display.
@@ -22,7 +24,7 @@ public class Line extends Figure {
      * @param end   Endposition der Linie auf dem Display
      */
     public Line(Position start, Position end) {
-        super(start);
+        this.setPosition(start)
         this.end = end;
     }
 
@@ -32,8 +34,7 @@ public class Line extends Figure {
 
     @Override
     public void moveTo(Position position) {
-        this.getLocation().x += getPosition().getX();
-        this.getLocation().y += getPosition().getX();
+
     }
 
     @Override

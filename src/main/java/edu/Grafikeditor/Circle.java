@@ -1,12 +1,14 @@
-package edu.aufgabe1;
+package edu.Grafikeditor;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
 import java.awt.*;
 
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Circle extends Figure {
 
     /**
@@ -40,8 +42,7 @@ public class Circle extends Figure {
 
     @Override
     public void moveTo(Position position){
-        this.getLocation().x += getPosition().getX();
-        this.getLocation().y += getPosition().getY();
+
     }
 
     @Override

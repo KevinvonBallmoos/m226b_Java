@@ -1,13 +1,14 @@
-package edu.aufgabe1;
+package edu.Grafikeditor;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import javax.swing.*;
 import java.awt.*;
 
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Rectangle extends Figure {
     /**
      * Länge und Breite des Rechteckes.
@@ -31,7 +32,7 @@ public class Rectangle extends Figure {
      * @param width Breite des Rechteckes
      */
     public Rectangle(Position position, int height, int width) {
-        super(position);
+        this.setPosition(position)
         this.height = height;
         this.width = width;
     }
@@ -42,12 +43,11 @@ public class Rectangle extends Figure {
 
     @Override
     public void moveTo(Position position) {
-        this.getLocation().x += getPosition().getX();
-        this.getLocation().y += getPosition().getY();
+//        this.getPosition().add
     }
 
     @Override
-    public void draw(Graphics g) {
+    public void draw(Graphics graphics) {
         g.drawRect(
                 this.getPosition().getX(),
                 this.getPosition().getY(),

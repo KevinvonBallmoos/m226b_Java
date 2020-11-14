@@ -1,4 +1,7 @@
-package edu.aufgabe1;
+package edu.Grafikeditor.controller;
+
+import edu.Grafikeditor.Compositum;
+import edu.Grafikeditor.Figure;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,11 +16,16 @@ import java.awt.*;
  */
 public class Display extends JFrame {
 
+
+    private final Compositum components;
+
     /**
      * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
      * JFrame-Objekt, auf welchem die Figuren gezeichnet werden.
      */
     public Display(Compositum compositum) {
+
+        this.components = compositum;
         Dimension windowSize = new Dimension(600, 600);
         setSize(windowSize);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -38,9 +46,9 @@ public class Display extends JFrame {
             // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-
             // Methode beim Display aufruft.
             @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                draw(g);
+            protected void paintComponent(Graphics graphics) {
+                super.paintComponent(graphics);
+                draw(graphics);
             }
         });
     }
@@ -48,27 +56,18 @@ public class Display extends JFrame {
     /**
      * Zeichnet alle Figuren.
      *
-     * @param g Referenz auf das Graphics-Objekt zum zeichnen.
+     * @param graphics Referenz auf das Graphics-Objekt zum zeichnen.
      */
-    private void draw(Graphics g) {
-        for (Component component: getComponents()){
-            if (component instanceof Rectangle){
-                Rectangle rectangle = (Rectangle) component;
-                rectangle.draw(g);
+    private void draw(Graphics graphics) {
+        for (Component component : components.getComponents()) {
+            if (component instanceof Figure) {
+                Figure figure = (Figure) component;
+                figure.draw(graphics);
             }
-            if (component instanceof Circle){
-                Circle circle = (Circle) component;
-                circle.draw(g);
-            }
-            if (component instanceof Line){
-                Line line = (Line) component;
-                line.draw(g);
-            }
-
         }
-
     }
-    public void display(){
+
+    public void display() {
         repaint();
     }
 

@@ -1,4 +1,4 @@
-package edu.aufgabe1;
+package edu.Grafikeditor;
 
 import lombok.Getter;
 import lombok.ToString;

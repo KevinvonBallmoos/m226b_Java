@@ -1,4 +1,6 @@
-package edu.aufgabe1;
+package edu.Grafikeditor;
+
+import edu.Grafikeditor.controller.Display;
 
 public class Drawing {
     public static void main(String[] args) throws InterruptedException {
