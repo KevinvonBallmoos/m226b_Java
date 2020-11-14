@@ -12,8 +12,7 @@ public class Main {
         editor.setContent("Hallo Welt");
         history.push(editor.createState());
 
-        editor.setContent("Hallo W");
-        history.push(editor.createState());
+        editor.setContent("Hallo Welt Tschüs");
 
         System.out.println(editor);
         editor.undo(history.pop());
