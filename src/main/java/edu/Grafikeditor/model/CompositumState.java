@@ -1,8 +1,8 @@
-package edu.Grafikeditor.memento;
+package edu.Grafikeditor.model;
 
 import lombok.Getter;
 
-public class EditorState {
+public class CompositumState {
 
     @Getter
     private final String content;
@@ -12,7 +12,7 @@ public class EditorState {
      *
      * @param content aktueller Zustand
      */
-    public EditorState(String content) {
+    public CompositumState(String content) {
         this.content = content;
     }
 }

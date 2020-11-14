@@ -1,17 +1,16 @@
-package edu.Grafikeditor.memento;
+package edu.Grafikeditor.model;
 
 import java.util.Stack;
 
 public class History {
-
-    private final Stack<EditorState> states = new Stack<>();
+    private final Stack<CompositumState> states = new Stack<>();
 
     /**
      * Hinzufügen eines neuen Editor-Zustandes.
      *
      * @param state neuer Zustand des Editors
      */
-    public void push(EditorState state) {
+    public void push(CompositumState state) {
         states.add(state);
     }
 
@@ -21,8 +20,7 @@ public class History {
      *
      * @return liefert das letzte Element der <i>History</i>
      */
-    public EditorState pop() {
-        return states.pop()
-                ;
+    public CompositumState pop() {
+        return states.pop();
     }
 }
