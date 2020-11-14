@@ -1,11 +1,8 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
 
-import javax.swing.*;
 import java.awt.*;
 
 @Data
@@ -24,22 +21,25 @@ public class Line extends Figure {
      * @param end   Endposition der Linie auf dem Display
      */
     public Line(Position start, Position end) {
-        this.setPosition(start)
+        this.setPosition(start);
         this.end = end;
+    }
+    public Line(int x, int y, int endX, int endY){
+        this(new Position(x,y), new Position(endX, endY));
+    }
+
+    @Override
+    public void moveTo(Position position) {
+        this.getPosition().add(position);
+        end.add(position);
     }
 
     /**
      * Zeichnet eine Figur auf dem Display.
      */
-
     @Override
-    public void moveTo(Position position) {
-
-    }
-
-    @Override
-    public void draw(Graphics g) {
-        g.drawLine(this.getPosition().getX(),
+    public void draw(Graphics graphics) {
+        graphics.drawLine(this.getPosition().getX(),
                 this.getPosition().getY(),
                 this.getEnd().getX(),
                 this.getEnd().getY());

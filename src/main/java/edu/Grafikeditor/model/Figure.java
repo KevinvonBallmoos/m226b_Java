@@ -1,7 +1,7 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode
+import lombok.EqualsAndHashCode;
 import java.awt.*;
 
 @Data

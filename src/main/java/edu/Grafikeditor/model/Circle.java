@@ -1,9 +1,8 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+
 
 import java.awt.*;
 
@@ -14,7 +13,7 @@ public class Circle extends Figure {
     /**
      * Radius des Kreises.
      */
-    private int radius;
+    private final int radius;
 
     /**
      * Erstellen eines neuen Kreises.
@@ -32,8 +31,12 @@ public class Circle extends Figure {
      * @param radius   Radius des Kreises
      */
     public Circle(Position position, int radius) {
-        super(position);
+        this.setPosition(position);
         this.radius = radius;
+    }
+
+    public Circle(int x, int y, int radius){
+        this(new Position(x,y), radius);
     }
 
     /**
@@ -42,16 +45,16 @@ public class Circle extends Figure {
 
     @Override
     public void moveTo(Position position){
-
+    this.getPosition().add(position);
     }
 
     @Override
-    public void draw(Graphics g) {
-        this.radius = this.getRadius();
+    public void draw(Graphics graphics) {
+        int radius = getRadius();
         int diameter = radius * 2;
-        g.drawOval(
-                this.getPosition().getX() - radius,
-                this.getPosition().getY() - radius,
+        graphics.drawOval(
+                getPosition().getX() - radius,
+                getPosition().getY() - radius,
                 diameter, diameter);
     }
 }

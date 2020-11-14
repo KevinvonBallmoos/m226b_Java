@@ -1,7 +1,7 @@
 package edu.Grafikeditor.controller;
 
-import edu.Grafikeditor.Compositum;
-import edu.Grafikeditor.Figure;
+import edu.Grafikeditor.model.Compositum;
+import edu.Grafikeditor.model.Figure;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +24,6 @@ public class Display extends JFrame {
      * JFrame-Objekt, auf welchem die Figuren gezeichnet werden.
      */
     public Display(Compositum compositum) {
-
         this.components = compositum;
         Dimension windowSize = new Dimension(600, 600);
         setSize(windowSize);
@@ -37,7 +36,6 @@ public class Display extends JFrame {
         createAndAddDrawingPanel();
         setResizable(false);
         setVisible(true);
-
     }
 
     private void createAndAddDrawingPanel() {

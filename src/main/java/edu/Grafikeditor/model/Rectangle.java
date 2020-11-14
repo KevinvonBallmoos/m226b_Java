@@ -1,9 +1,7 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
 
 import java.awt.*;
 
@@ -17,8 +15,9 @@ public class Rectangle extends Figure {
 
     /**
      * Erstellen eines neuen Rechteckes.
+     *
      * @param height Länge des Rechteckes
-     * @param width Breite des Rechteckes
+     * @param width  Breite des Rechteckes
      */
     public Rectangle(int height, int width) {
         this(new Position(), height, width);
@@ -27,14 +26,18 @@ public class Rectangle extends Figure {
     /**
      * Erstellen eines neuen Rechteckes. Die Position [x,y] entspricht
      * der oberen, linken Ecke des Rechteckes.
+     *
      * @param position Position des Rechteckes auf dem Display
-     * @param height Länge des Rechteckes
-     * @param width Breite des Rechteckes
+     * @param height   Länge des Rechteckes
+     * @param width    Breite des Rechteckes
      */
     public Rectangle(Position position, int height, int width) {
-        this.setPosition(position)
+        this.setPosition(position);
         this.height = height;
         this.width = width;
+    }
+    public Rectangle(int x, int y, int height, int width){
+        this(new Position(x,y), height, width);
     }
 
     /**
@@ -43,15 +46,15 @@ public class Rectangle extends Figure {
 
     @Override
     public void moveTo(Position position) {
-//        this.getPosition().add
+        this.getPosition().add(position);
     }
 
     @Override
     public void draw(Graphics graphics) {
-        g.drawRect(
-                this.getPosition().getX(),
-                this.getPosition().getY(),
-                this.getWidth(), this.getHeight());
+        graphics.drawRect(
+                getPosition().getX(),
+                getPosition().getY(),
+                getWidth(), getHeight());
     }
 
 }

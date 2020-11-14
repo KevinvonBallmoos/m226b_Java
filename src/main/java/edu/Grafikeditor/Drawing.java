@@ -1,6 +1,7 @@
 package edu.Grafikeditor;
 
 import edu.Grafikeditor.controller.Display;
+import edu.Grafikeditor.model.*;
 
 public class Drawing {
     public static void main(String[] args) throws InterruptedException {
@@ -25,9 +26,9 @@ public class Drawing {
 
         display.display();
 
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             Thread.sleep(50);
-            compositum.moveTo(new Position(1,1));
+            compositum.moveTo(new Position(1, 1));
             display.display();
         }
     }

@@ -1,10 +1,9 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Compositum extends Component {
+
+public class Compositum extends Container {
 
     /**
      * Die Liste der dargestellten Figur-Objekte
@@ -13,7 +12,7 @@ public class Compositum extends Component {
 
     public void moveTo(Position position) {
         for (Component component : this.getComponents()) {
-            Figure figure = (figure) component;
+            Figure figure = (Figure) component;
             figure.moveTo(position);
         }
     }

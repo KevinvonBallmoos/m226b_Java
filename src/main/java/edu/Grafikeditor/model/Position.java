@@ -1,13 +1,10 @@
-package edu.Grafikeditor;
+package edu.Grafikeditor.model;
 
-import lombok.Getter;
-import lombok.ToString;
-
+import lombok.Data;
 /**
  * Positionsobjekt für die Grafikelemente
  */
-@Getter
-@ToString
+@Data
 public class Position {
     private int x, y;
 
