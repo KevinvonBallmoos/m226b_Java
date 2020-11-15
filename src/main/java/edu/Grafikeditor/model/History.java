@@ -6,9 +6,9 @@ public class History {
     private final Stack<CompositumState> states = new Stack<>();
 
     /**
-     * Hinzufügen eines neuen Editor-Zustandes.
+     * Hinzufügen eines neuen Compsitum-Zustandes.
      *
-     * @param state neuer Zustand des Editors
+     * @param state neuer Zustand des Compositums
      */
     public void push(CompositumState state) {
         states.add(state);

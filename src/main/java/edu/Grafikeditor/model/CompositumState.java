@@ -2,17 +2,19 @@ package edu.Grafikeditor.model;
 
 import lombok.Getter;
 
+import java.awt.*;
+
 public class CompositumState {
 
     @Getter
-    private final String content;
+    private final Component component;
 
     /**
      * Erstellt ein neues Zustandsobjekt des Editors.
      *
-     * @param content aktueller Zustand
+     * @param component aktueller Zustand
      */
-    public CompositumState(String content) {
-        this.content = content;
+    public CompositumState(Component component) {
+        this.component = component;
     }
 }

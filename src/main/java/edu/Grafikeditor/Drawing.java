@@ -38,7 +38,7 @@ public class Drawing {
             compositum.moveTo(new Position(1, 1));
             history.push(compositum.createState());
 
-            for (int j = 0; j < 2; j++){
+            for (int j = 0; j < 1; j++){
                 compositum.undo(history.pop());
                 display.display();
             }
