@@ -8,11 +8,9 @@ import java.awt.*;
 
 
 /**
- * Die Klasse Display stellt ein Fenster auf dem Bildschirm zur Verfügung, in welchem
- * Figur-Objekte dargestellt werden können.
- * Siehe auch Java-Grundkurs Abschnitt 10.2 und 10.3.
+ * class Display, creates a Window, so Figures can be drawn on it
  *
- * @author Andres Scheidegger
+ * @author Kevin
  */
 public class Display extends JFrame {
 
@@ -20,8 +18,10 @@ public class Display extends JFrame {
     private final Compositum components;
 
     /**
-     * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
-     * JFrame-Objekt, auf welchem die Figuren gezeichnet werden.
+     * 1. Constructor, initializes the Window in the center of the screen an creates an JFrame-object,
+     * on wich Figures can be drawn
+     *
+     * @param compositum required to get the components in the Array components
      */
     public Display(Compositum compositum) {
         this.components = compositum;
@@ -38,11 +38,12 @@ public class Display extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * creates and draws a new JPanel
+     * painComponent method gets called automatically, as soon the repaint method gets called in display
+     */
     private void createAndAddDrawingPanel() {
-        // Das JPanel-Objekt ist ein Objekt einer anonymen Unterklasse von JPanel
         add(new JPanel() {
-            // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-
-            // Methode beim Display aufruft.
             @Override
             protected void paintComponent(Graphics graphics) {
                 super.paintComponent(graphics);
@@ -52,9 +53,9 @@ public class Display extends JFrame {
     }
 
     /**
-     * Zeichnet alle Figuren.
+     * draw method to call the specific draw method in circle, line or rectangle
      *
-     * @param graphics Referenz auf das Graphics-Objekt zum zeichnen.
+     * @param graphics reference to the Graphics object, to draw
      */
     private void draw(Graphics graphics) {
         for (Component component : components.getComponents()) {
@@ -65,6 +66,9 @@ public class Display extends JFrame {
         }
     }
 
+    /**
+     * calls the repaint method, which calls the paintComponent method
+     */
     public void display() {
         repaint();
     }

@@ -6,7 +6,18 @@ import edu.Grafikeditor.model.Rectangle;
 
 import java.awt.*;
 
+/**
+ * main Class, program starts here
+ * @author Kevin
+ */
 public class Drawing {
+    /**
+     * first position of rectangle, circle and line gets defined
+     * than they move to another position
+     * undo function returns figures to the first location
+     * @param args String
+     * @throws InterruptedException Thread.sleep(), to see the figure move
+     */
     public static void main(String[] args) throws InterruptedException {
 
         Compositum compositum = new Compositum();
@@ -34,19 +45,19 @@ public class Drawing {
         display.display();
 
         for (int i = 0; i < 100; i++) {
-            Thread.sleep(100);
+            Thread.sleep(50);
             compositum.moveTo(new Position(1, 1));
             history.push(compositum.createState());
 
-            for (int j = 0; j < 1; j++){
-                compositum.undo(history.pop());
-                display.display();
-            }
             display.display();
-
-
+        }
+        for (int j = 0; j < 1; j++) {
+            compositum.undo(history.pop());
+            display.display();
         }
 
     }
+
 }
+
 

@@ -5,29 +5,45 @@ import lombok.EqualsAndHashCode;
 
 import java.awt.*;
 
+/**
+ * class Line, creating, drawing and moving a line
+ *
+ * @author Kevin
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Line extends Figure {
-    /**
-     * Endposition der Linie auf dem Display.
-     */
+
     private Position end;
 
     /**
-     * Erstellen einer neuen Linie. Die Position [x,y] entspricht der
-     * Startposition der Linie auf dem Display.
+     * 1. Constructor, creates a new line
      *
      * @param start Startposition der Linie auf dem Display
-     * @param end   Endposition der Linie auf dem Display
+     * @param end   end position of the line on the display
      */
     public Line(Position start, Position end) {
         this.setPosition(start);
         this.end = end;
     }
-    public Line(int x, int y, int endX, int endY){
-        this(new Position(x,y), new Position(endX, endY));
+
+    /**
+     * 2. Constructor, creates a new line
+     *
+     * @param x    equals the start position of the line on the display
+     * @param y    equals the start position of the line on the display
+     * @param endX end position of the line on the display
+     * @param endY end position of the line on the display
+     */
+    public Line(int x, int y, int endX, int endY) {
+        this(new Position(x, y), new Position(endX, endY));
     }
 
+    /**
+     * moveTo method to move the line across the graphic interface (hardcoded), no mouse events
+     *
+     * @param position is required to move the figure to another position
+     */
     @Override
     public void moveTo(Position position) {
         this.getPosition().add(position);
@@ -35,7 +51,9 @@ public class Line extends Figure {
     }
 
     /**
-     * Zeichnet eine Figur auf dem Display.
+     * draw method to draw it to the graphic interface
+     *
+     * @param graphics is required to draw the figure
      */
     @Override
     public void draw(Graphics graphics) {

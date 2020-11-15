@@ -4,15 +4,20 @@ import lombok.Getter;
 
 import java.awt.*;
 
+/**
+ * class CompositumState, creates new state objects
+ *
+ * @author Kevin
+ */
 public class CompositumState {
 
     @Getter
     private final Component component;
 
     /**
-     * Erstellt ein neues Zustandsobjekt des Editors.
+     * Creates a new state object from Compositum.java
      *
-     * @param component aktueller Zustand
+     * @param component actual state
      */
     public CompositumState(Component component) {
         this.component = component;

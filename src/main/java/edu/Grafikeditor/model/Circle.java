@@ -6,48 +6,62 @@ import lombok.EqualsAndHashCode;
 
 import java.awt.*;
 
+/**
+ * class Circle, creating, drawing and moving a circle
+ *
+ * @author Kevin
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Circle extends Figure {
 
-    /**
-     * Radius des Kreises.
-     */
     private final int radius;
 
     /**
-     * Erstellen eines neuen Kreises.
+     * 1. Constructor, creates a new circle
      *
-     * @param radius Radius des Kreises
+     * @param radius to calculate the size of the circle
      */
     public Circle(int radius) {
         this(new Position(), radius);
     }
 
     /**
-     * Erstellen eines neuen Kreises.
-     *
-     * @param position Position des Kreises auf dem Display
-     * @param radius   Radius des Kreises
+     * 2. Constructor, creates a new circle
+     * @param position start position on the display
+     * @param radius to calculate the size of the circle
      */
     public Circle(Position position, int radius) {
         this.setPosition(position);
         this.radius = radius;
     }
 
-    public Circle(int x, int y, int radius){
-        this(new Position(x,y), radius);
+    /**
+     * 3. Constructor, creates a new circle
+     * @param x start position of the circle
+     * @param y start position of the circle
+     * @param radius to calculate the size of the circle
+     */
+    public Circle(int x, int y, int radius) {
+        this(new Position(x, y), radius);
+    }
+
+
+    /**
+     * moveTo method to move the circle the graphic interface (hardcoded), no mouse events
+     *
+     * @param position is required to move the figure to another position
+     */
+    @Override
+    public void moveTo(Position position) {
+        this.getPosition().add(position);
     }
 
     /**
-     * Zeichnet eine Figur auf dem Display.
+     * draw method to draw it to the graphic interface
+     *
+     * @param graphics is required to draw the figure
      */
-
-    @Override
-    public void moveTo(Position position){
-    this.getPosition().add(position);
-    }
-
     @Override
     public void draw(Graphics graphics) {
         int radius = getRadius();
