@@ -13,8 +13,7 @@ import java.awt.*;
 public class Compositum extends Container {
 
     @Setter
-    private Component component;
-
+    Component[] component;
     /**
      * moveTo method to call the specific moveTo method in circle, line or rectangle
      *
@@ -35,7 +34,7 @@ public class Compositum extends Container {
      * @return actual state of composite
      */
     public CompositumState createState() {
-        return new CompositumState(component);
+        return new CompositumState(this.getComponents());
     }
 
     /**
@@ -46,6 +45,7 @@ public class Compositum extends Container {
      * @param state actual state of composite
      */
     public void undo(CompositumState state) {
-        component = state.getComponent();
+        setComponent()= getComponents();
     }
+
 }

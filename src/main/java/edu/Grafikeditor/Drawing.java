@@ -8,6 +8,7 @@ import java.awt.*;
 
 /**
  * main Class, program starts here
+ *
  * @author Kevin
  */
 public class Drawing {
@@ -15,6 +16,7 @@ public class Drawing {
      * first position of rectangle, circle and line gets defined
      * than they move to another position
      * undo function returns figures to the first location
+     *
      * @param args String
      * @throws InterruptedException Thread.sleep(), to see the figure move
      */
@@ -44,14 +46,15 @@ public class Drawing {
 
         display.display();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 80; i++) {
             Thread.sleep(50);
             compositum.moveTo(new Position(1, 1));
             history.push(compositum.createState());
 
             display.display();
         }
-        for (int j = 0; j < 1; j++) {
+        for (int j = 0; j < 20; j++) {
+            Thread.sleep(50);
             compositum.undo(history.pop());
             display.display();
         }

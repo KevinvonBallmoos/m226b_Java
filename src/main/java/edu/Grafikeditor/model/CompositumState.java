@@ -12,14 +12,14 @@ import java.awt.*;
 public class CompositumState {
 
     @Getter
-    private final Component component;
+    private final Component[] component;
 
     /**
      * Creates a new state object from Compositum.java
      *
      * @param component actual state
      */
-    public CompositumState(Component component) {
+    public CompositumState(Component[] component) {
         this.component = component;
     }
 }
