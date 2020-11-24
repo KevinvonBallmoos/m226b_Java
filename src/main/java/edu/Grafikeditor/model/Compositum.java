@@ -3,6 +3,9 @@ package edu.Grafikeditor.model;
 import lombok.Setter;
 
 import java.awt.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * class Compositum
@@ -12,8 +15,6 @@ import java.awt.*;
  */
 public class Compositum extends Container {
 
-    @Setter
-    Component[] component;
     /**
      * moveTo method to call the specific moveTo method in circle, line or rectangle
      *
@@ -25,6 +26,7 @@ public class Compositum extends Container {
             figure.moveTo(position);
         }
     }
+
 
     /**
      * #Todo
@@ -45,7 +47,12 @@ public class Compositum extends Container {
      * @param state actual state of composite
      */
     public void undo(CompositumState state) {
-        setComponent()= getComponents();
-    }
+        removeAll();
+        for (Component component : state.getComponents()) {
+            Figure figure = (Figure) component;
+            this.add(figure);
+        }
 
+
+    }
 }
