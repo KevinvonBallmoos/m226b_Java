@@ -12,17 +12,17 @@ import java.util.List;
 public class FigurParser {
 
 
-    private final FigurFileDao dao;
+    private final FigureFileDAOStub dao;
 
-    public FigurParser(FigurFileDao dao) {
+    public FigurParser(FigureFileDAOStub dao) {
         this.dao = dao;
     }
 
     public List<Figure> parse() {
         List<Figure> figuren = new ArrayList<>();
-        String[] figurData = dao.readNextFigurData();
+        Figure[] figurData = dao.readNextFigurData();
         while (figurData != null) {
-            String figurTyp = figurData[0];
+            Figure figurTyp = figurData[0];
             int x = Integer.parseInt(figurData[1]);
             int y = Integer.parseInt(figurData[2]);
             switch (figurTyp) {

@@ -11,6 +11,18 @@ public class GraphicsStub extends ConcreteGraphics {
     private int x, y;
     private int width, height;
 
+    public static int getNumberOfCalls() {
+        return numberOfCalls;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+   
     @Override
     public void drawRect(int x, int y, int width, int height) {
         numberOfCalls++;
@@ -19,4 +31,5 @@ public class GraphicsStub extends ConcreteGraphics {
         this.width = width;
         this.height = height;
     }
+
 }
