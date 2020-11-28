@@ -23,6 +23,6 @@ class FigurParserTest {
     void parse() {
         List<Figure> list = parser.parse();
         assertEquals(3, list.size());
-        assertEquals(Rec);
+        assertEquals();
     }
 }
