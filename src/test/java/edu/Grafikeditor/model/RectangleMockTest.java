@@ -7,23 +7,30 @@ import java.awt.*;
 
 import static org.mockito.Mockito.*;
 
+/**
+ * class RectangleMockTest test method draw
+ */
 public class RectangleMockTest {
 
-    // Erstellen eines Objektes mitz Hilfe von Mockito
+
     private final Graphics graphics = mock(Graphics.class);
     private Rectangle rectangle;
 
+    /**
+     * setup creates a new Rectangle
+     */
     @BeforeEach
     void setUp() {
         rectangle = new Rectangle(100, 150);
     }
 
+    /**
+     * The calling of the methods anc comparing of the parameters will be done by mockito
+     */
     @Test
     void draw() {
         rectangle.draw(graphics);
 
-        // Die Überprüfung des korrekten Aufrufes und der korrekten Parameter
-        // übernimmt an dieser Stelle nun auch Mockito
         verify(graphics, times(1)).drawRect(0, 0, 150, 100);
     }
 }

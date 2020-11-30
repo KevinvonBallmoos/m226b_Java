@@ -63,6 +63,10 @@ public class Line extends Figure {
                 this.getEnd().getY());
     }
 
+    /**
+     * clones the state/position of the object
+     * @return the actual state/position
+     */
     @Override
     public Object clone() {
        return new Line(getPosition(), end);

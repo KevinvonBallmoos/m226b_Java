@@ -74,6 +74,10 @@ public class Circle extends Figure {
                 diameter, diameter);
     }
 
+    /**
+     * clones the state/position of the object
+     * @return the actual state/position
+     */
     @Override
     public Object clone() {
         return new Circle(getPosition(), radius);

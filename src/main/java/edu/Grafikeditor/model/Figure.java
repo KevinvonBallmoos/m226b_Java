@@ -26,6 +26,10 @@ public abstract class Figure extends Container implements Cloneable{
      */
     abstract public  void draw(Graphics graphics);
 
+    /**
+     * clones the state/position of the object
+     * @return the actual state/position
+     */
     @Override
     abstract public  Object clone();
 

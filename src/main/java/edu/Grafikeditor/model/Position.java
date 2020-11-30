@@ -42,6 +42,10 @@ public class Position implements Cloneable {
         this.y += position.getY();
     }
 
+    /**
+     * clones the state/position of the object
+     * @return the actual state/position
+     */
     @Override
     public Object clone() {
         return new Position(x, y);

@@ -2,27 +2,33 @@ package edu.Grafikeditor.model;
 
 import lombok.Getter;
 
+/**
+ * class GraphicsStub, has Override Methods from the ConcreteGraphics class
+ *
+ * @author Kevin
+ */
 @Getter
 public class GraphicsStub extends ConcreteGraphics {
 
-    // Hilfsobjekte, welche zur Überprüfung der Schnittstellen
-    // benötigt werden.
     private static int numberOfCalls;
     private int x, y;
     private int width, height;
 
+    /**
+     * getter for variable numberOfCalls
+     * @return variable numberOfCalls
+     */
     public static int getNumberOfCalls() {
         return numberOfCalls;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-   
+    /**
+     * Override Method from drawRect
+     * @param x x
+     * @param y y
+     * @param width width
+     * @param height height
+     */
     @Override
     public void drawRect(int x, int y, int width, int height) {
         numberOfCalls++;
@@ -32,6 +38,13 @@ public class GraphicsStub extends ConcreteGraphics {
         this.height = height;
     }
 
+    /**
+     * Override Method from drawOval
+     * @param x x
+     * @param y y
+     * @param width width
+     * @param height height
+     */
     @Override
     public void drawOval(int x, int y, int width, int height) {
         numberOfCalls++;

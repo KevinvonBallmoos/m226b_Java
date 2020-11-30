@@ -5,6 +5,11 @@ import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
 
+/**
+ * class ConcreteGraphics shows all the methods from class Graphics
+ *
+ * @author Kevin
+ */
 public class ConcreteGraphics extends Graphics {
 
 

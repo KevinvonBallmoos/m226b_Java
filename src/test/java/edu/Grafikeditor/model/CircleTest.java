@@ -5,16 +5,26 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * class CircleTest test method draw
+ */
 class CircleTest {
 
     private final  GraphicsStub graphics = new GraphicsStub();
     private Circle circle;
 
+    /**
+     * setup creates a new Circle
+     */
     @BeforeEach
     void setUp() {
     circle = new Circle(100, 100, 15);
     }
 
+    /**
+     * method draw gets called and compared
+     */
     @Test
     void draw() {
         circle.draw(graphics);

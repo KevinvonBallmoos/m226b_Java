@@ -59,12 +59,12 @@ public class Display extends JFrame {
      */
 
     private void draw(Graphics graphics) {
-//        for (Component component : components.getComponents()) {
-//            if (component instanceof Figure) {
-//                Figure figure = (Figure) component;
-//                figure.draw(graphics);
-//            }
-//        }
+        for (Component component : content.getComponents()) {
+            if (component instanceof Figure) {
+                Figure figure = (Figure) component;
+                figure.draw(graphics);
+            }
+        }
     }
 
     /**
