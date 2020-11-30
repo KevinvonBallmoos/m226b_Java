@@ -19,7 +19,7 @@ class RectangleTest {
     void draw() {
         rectangle.draw(graphics);
 
-        assertEquals(1, GraphicsStub.getNumberOfCalls());
+        assertEquals(2, GraphicsStub.getNumberOfCalls());
         assertEquals(0, graphics.getX());
         assertEquals(0, graphics.getY());
         assertEquals(100, graphics.getHeight());

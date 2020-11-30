@@ -13,7 +13,7 @@ import java.awt.*;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public abstract class Figure extends Container {
+public abstract class Figure extends Container implements Cloneable{
 
     private Position position;
 
@@ -24,7 +24,10 @@ public abstract class Figure extends Container {
      *
      * @param graphics is required to draw the figure
      */
-    public abstract void draw(Graphics graphics);
+    abstract public  void draw(Graphics graphics);
+
+    @Override
+    abstract public  Object clone();
 
 }
 

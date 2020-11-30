@@ -1,6 +1,7 @@
 package edu.Grafikeditor.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * class Position, creates or calculates a new position
@@ -8,7 +9,7 @@ import lombok.Data;
  * @author Kevin
  */
 @Data
-public class Position {
+public class Position implements Cloneable {
     private int x, y;
 
     /**
@@ -41,4 +42,8 @@ public class Position {
         this.y += position.getY();
     }
 
+    @Override
+    public Object clone() {
+        return new Position(x, y);
+    }
 }

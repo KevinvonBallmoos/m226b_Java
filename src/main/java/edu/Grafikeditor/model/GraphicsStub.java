@@ -32,4 +32,13 @@ public class GraphicsStub extends ConcreteGraphics {
         this.height = height;
     }
 
+    @Override
+    public void drawOval(int x, int y, int width, int height) {
+        numberOfCalls++;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
 }

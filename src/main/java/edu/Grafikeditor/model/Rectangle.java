@@ -74,6 +74,10 @@ public class Rectangle extends Figure {
                 getWidth(), getHeight());
     }
 
+    @Override
+    public Object clone() {
+        return new Rectangle(getPosition(), height, width);
+    }
 }
 
 

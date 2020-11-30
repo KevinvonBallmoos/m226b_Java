@@ -49,6 +49,7 @@ public class Drawing {
         for (int i = 0; i < 50; i++) {
             Thread.sleep(50);
             compositum.moveTo(new Position(1, 1));
+
             history.push(compositum.createState());
             display.display();
         }

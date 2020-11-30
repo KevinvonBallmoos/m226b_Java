@@ -15,7 +15,7 @@ import java.awt.*;
 public class Display extends JFrame {
 
 
-    private final Compositum components;
+    private Compositum content;
 
     /**
      * 1. Constructor, initializes the Window in the center of the screen an creates an JFrame-object,
@@ -24,7 +24,7 @@ public class Display extends JFrame {
      * @param compositum required to get the components in the Array components
      */
     public Display(Compositum compositum) {
-        this.components = compositum;
+        this.content = compositum;
         Dimension windowSize = new Dimension(600, 600);
         setSize(windowSize);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -57,13 +57,14 @@ public class Display extends JFrame {
      *
      * @param graphics reference to the Graphics object, to draw
      */
+
     private void draw(Graphics graphics) {
-        for (Component component : components.getComponents()) {
-            if (component instanceof Figure) {
-                Figure figure = (Figure) component;
-                figure.draw(graphics);
-            }
-        }
+//        for (Component component : components.getComponents()) {
+//            if (component instanceof Figure) {
+//                Figure figure = (Figure) component;
+//                figure.draw(graphics);
+//            }
+//        }
     }
 
     /**

@@ -28,8 +28,9 @@ public class Circle extends Figure {
 
     /**
      * 2. Constructor, creates a new circle
+     *
      * @param position start position on the display
-     * @param radius to calculate the size of the circle
+     * @param radius   to calculate the size of the circle
      */
     public Circle(Position position, int radius) {
         this.setPosition(position);
@@ -38,8 +39,9 @@ public class Circle extends Figure {
 
     /**
      * 3. Constructor, creates a new circle
-     * @param x start position of the circle
-     * @param y start position of the circle
+     *
+     * @param x      start position of the circle
+     * @param y      start position of the circle
      * @param radius to calculate the size of the circle
      */
     public Circle(int x, int y, int radius) {
@@ -70,5 +72,10 @@ public class Circle extends Figure {
                 getPosition().getX() - radius,
                 getPosition().getY() - radius,
                 diameter, diameter);
+    }
+
+    @Override
+    public Object clone() {
+        return new Circle(getPosition(), radius);
     }
 }

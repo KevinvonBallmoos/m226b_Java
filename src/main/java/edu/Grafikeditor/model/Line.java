@@ -63,5 +63,9 @@ public class Line extends Figure {
                 this.getEnd().getY());
     }
 
+    @Override
+    public Object clone() {
+       return new Line(getPosition(), end);
+    }
 }
 
