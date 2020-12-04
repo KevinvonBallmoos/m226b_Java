@@ -4,10 +4,12 @@ import edu.Grafikeditor.model.Circle;
 import edu.Grafikeditor.model.Figure;
 import edu.Grafikeditor.model.Line;
 import edu.Grafikeditor.model.Rectangle;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @SuppressWarnings("unused")
 public class FigurParser {
 
@@ -17,6 +19,7 @@ public class FigurParser {
     public FigurParser(FigureFileDAOStub dao) {
         this.dao = dao;
     }
+
     public List<Figure> parse() {
         List<Figure> figuren = new ArrayList<>();
         String[] figurData = dao.readNextFigurData();

@@ -24,5 +24,7 @@ class PersonParserTest {
         List<Person> list = parser.parse();
         assertEquals(3, list.size());
         assertEquals("Kevin", list.get(0).getFirstName());
+        assertEquals("Peter", list.get(1).getFirstName());
+        assertEquals("vonBallmoos", list.get(0).getLastName());
     }
 }

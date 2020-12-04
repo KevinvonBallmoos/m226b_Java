@@ -1,6 +1,7 @@
 package edu.mockito;
 
 public class FileDAOStub implements DAO {
+
     private static int count = 0;
     private static final String[] list = {
             "Kevin,vonBallmoos,1",

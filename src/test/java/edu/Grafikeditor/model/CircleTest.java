@@ -32,7 +32,7 @@ class CircleTest {
         assertEquals(1, GraphicsStub.getNumberOfCalls());
         assertEquals(85, graphics.getX());
         assertEquals(85, graphics.getY());
-        assertEquals(30, graphics.getHeight());
         assertEquals(30, graphics.getWidth());
+        assertEquals(30, graphics.getHeight());
     }
 }
