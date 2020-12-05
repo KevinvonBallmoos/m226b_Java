@@ -68,8 +68,8 @@ public class Line extends Figure {
      * @return the actual state/position
      */
     @Override
-    public Object clone() {
-       return new Line(getPosition(), end);
+    public Line clone() {
+       return new Line(getPosition().clone(), end.clone());
     }
 }
 

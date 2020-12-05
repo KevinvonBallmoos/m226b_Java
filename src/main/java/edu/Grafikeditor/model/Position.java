@@ -47,7 +47,7 @@ public class Position implements Cloneable {
      * @return the actual state/position
      */
     @Override
-    public Object clone() {
+    public Position clone() {
         return new Position(x, y);
     }
 }

@@ -10,7 +10,7 @@ import java.util.Stack;
  * @author Kevin
  */
 public class History {
-    private final Stack<CompositumState> states = new Stack<>();
+    private final Stack<EditorState> states = new Stack<>();
 
     /**
      * #Todo
@@ -19,7 +19,7 @@ public class History {
      *
      * @param state new state of composite
      */
-    public void push(CompositumState state) {
+    public void push(EditorState state) {
         states.add(state);
     }
 
@@ -29,7 +29,7 @@ public class History {
      *
      * @return state.pop() the last element of the History
      */
-    public CompositumState pop() {
+    public EditorState pop() {
         return states.pop();
     }
 }

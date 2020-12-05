@@ -1,11 +1,7 @@
 package edu.Grafikeditor.model;
 
-import lombok.Setter;
-
 import java.awt.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /**
  * class Compositum
@@ -27,32 +23,14 @@ public class Compositum extends Container {
         }
     }
 
-
-    /**
-     * #Todo
-     * work in progress
-     * creates a new state of composite with the actual content
-     *
-     * @return actual state of composite
-     */
-    public CompositumState createState() {
-        return new CompositumState(this.getComponents());
-    }
-
-    /**
-     * #Todo
-     * work in progress
-     * undo the state
-     *
-     * @param state actual state of composite
-     */
-    public void undo(CompositumState state) {
-        removeAll();
-        for (Component component : state.getComponents()) {
-            Figure figure = (Figure) component;
-            this.add(figure);
+    @Override
+    public Compositum clone(){
+        Compositum clone = new Compositum();
+        for (int i = 0; i < getComponents().length; i++){
+            Component component = getComponents()[i];
+            clone.add((Component) ((Figure) component).clone());
         }
-
-
+        return clone;
     }
+
 }

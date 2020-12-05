@@ -37,11 +37,11 @@ public class Drawing {
         Line line = new Line(start, end);
 
         compositum.add(rectangle);
-        history.push(compositum.createState());
+        history.push(display.createState());
         compositum.add(circle);
-        history.push(compositum.createState());
+        history.push(display.createState());
         compositum.add(line);
-        history.push(compositum.createState());
+        history.push(display.createState());
 
 
         display.display();
@@ -50,12 +50,12 @@ public class Drawing {
             Thread.sleep(50);
             compositum.moveTo(new Position(1, 1));
 
-            history.push(compositum.createState());
+            history.push(display.createState());
             display.display();
         }
         for (int j = 0; j < 20; j++) {
             Thread.sleep(50);
-            compositum.undo(history.pop());
+            display.undo(history.pop());
             display.display();
         }
 

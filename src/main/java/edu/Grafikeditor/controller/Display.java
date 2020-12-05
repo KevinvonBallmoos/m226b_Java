@@ -1,7 +1,9 @@
 package edu.Grafikeditor.controller;
 
-import edu.Grafikeditor.model.Compositum;
 import edu.Grafikeditor.model.Figure;
+import edu.Grafikeditor.model.Compositum;
+import edu.Grafikeditor.model.EditorState;
+import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,8 +16,8 @@ import java.awt.*;
  */
 public class Display extends JFrame {
 
-
-    private Compositum content;
+    @Getter
+    private Compositum compositum;
 
     /**
      * 1. Constructor, initializes the Window in the center of the screen an creates an JFrame-object,
@@ -24,7 +26,8 @@ public class Display extends JFrame {
      * @param compositum required to get the components in the Array components
      */
     public Display(Compositum compositum) {
-        this.content = compositum;
+        this.compositum = compositum;
+
         Dimension windowSize = new Dimension(600, 600);
         setSize(windowSize);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -59,7 +62,7 @@ public class Display extends JFrame {
      */
 
     private void draw(Graphics graphics) {
-        for (Component component : content.getComponents()) {
+        for (Component component : compositum.getComponents()) {
             if (component instanceof Figure) {
                 Figure figure = (Figure) component;
                 figure.draw(graphics);
@@ -75,4 +78,19 @@ public class Display extends JFrame {
     }
 
 
+    /**
+     * creates a new state of composite with the actual content
+     *
+     * @return actual state of composite
+     */
+    public EditorState createState() {
+        return new EditorState(compositum);
+    }
+
+    /**
+     * @param state actual state of composite
+     */
+    public void undo(EditorState state) {
+        compositum = state.getCompositum();
+    }
 }

@@ -79,7 +79,7 @@ public class Circle extends Figure {
      * @return the actual state/position
      */
     @Override
-    public Object clone() {
-        return new Circle(getPosition(), radius);
+    public Circle clone() {
+        return new Circle(getPosition().clone(), radius);
     }
 }
